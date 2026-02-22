@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARKETING BRUVI - Sua Estratégia Personalizada</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background-color: #f5f5f5;
+        }
+
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            background: linear-gradient(135deg, #132757 0%, #0e2354 100%);
+            padding: 25px 20px;
+            text-align: center;
+            border-bottom: 4px solid #F83429;
+        }
+
+        .logo {
+            max-width: 150px;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .logo img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ===== PERSONALIZED GREETING ===== */
+        .greeting-section {
+            background: linear-gradient(135deg, #f0f5f7 0%, #ffffff 100%);
+            padding: 35px 25px;
+            border-bottom: 2px solid #F83429;
+            text-align: center;
+        }
+
+        .greeting-section h1 {
+            font-size: 28px;
+            color: #132757;
+            margin-bottom: 8px;
+            font-weight: 800;
+            line-height: 1.3;
+        }
+
+        .client-name {
+            color: #F83429;
+            font-weight: 800;
+        }
+
+        .greeting-section p {
+            font-size: 15px;
+            color: #666;
+            margin-top: 15px;
+            line-height: 1.7;
+        }
+
+        /* ===== HUMAN CONNECTION SECTION ===== */
+        .human-connection {
+            background-color: #fff3f0;
+            padding: 25px;
+            margin: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #F83429;
+        }
+
+        .human-connection h2 {
+            color: #132757;
+            font-size: 18px;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .human-connection p {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .human-connection em {
+            color: #F83429;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        /* ===== COMPETITION ALERT ===== */
+        .competition-alert {
+            background: linear-gradient(135deg, #fef3cd 0%, #fff8e1 100%);
+            border-left: 4px solid #ffc107;
+            padding: 20px 25px;
+            margin: 20px;
+            border-radius: 4px;
+        }
+
+        .competition-alert h3 {
+            color: #132757;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .competition-alert p {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .competitor-warning {
+            background-color: #ff6b6b;
+            color: #ffffff;
+            padding: 10px 15px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 13px;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        /* ===== MAIN CONTENT ===== */
+        .content-section {
+            padding: 30px 25px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .content-section h2 {
+            font-size: 22px;
+            color: #132757;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .content-section p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        .highlight-text {
+            color: #F83429;
+            font-weight: 700;
+        }
+
+        /* ===== PERSONALIZED STRATEGY SECTION ===== */
+        .strategy-section {
+            padding: 30px 25px;
+            background-color: #f9f9f9;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .strategy-section h3 {
+            color: #132757;
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .strategy-item {
+            background-color: #ffffff;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-left: 4px solid #F83429;
+            border-radius: 4px;
+        }
+
+        .strategy-item h4 {
+            color: #132757;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .strategy-item p {
+            color: #666;
+            font-size: 13px;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* ===== PDF PRESENTATION SECTION ===== */
+        .pdf-presentation {
+            background: linear-gradient(135deg, #F83429 0%, #d62817 100%);
+            color: #ffffff;
+            padding: 30px 25px;
+            margin: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid #ffffff;
+        }
+
+        .pdf-presentation h2 {
+            color: #ffffff;
+            font-size: 22px;
+            margin-bottom: 12px;
+            font-weight: 800;
+        }
+
+        .pdf-presentation p {
+            color: #ffffff;
+            font-size: 14px;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .pdf-button {
+            display: inline-block;
+            padding: 16px 30px;
+            background-color: #ffffff;
+            color: #F83429;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            border: 2px solid #ffffff;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .pdf-button:hover {
+            background-color: #f0f0f0;
+            border-color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+        }
+
+        .pdf-button::before {
+            content: '📄 ';
+            margin-right: 8px;
+        }
+
+        /* ===== MEETING CALL TO ACTION ===== */
+        .meeting-section {
+            background: linear-gradient(135deg, #132757 0%, #0a1a3a 100%);
+            color: #ffffff;
+            padding: 30px 25px;
+            margin: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .meeting-section h2 {
+            color: #F83429;
+            font-size: 22px;
+            margin-bottom: 12px;
+            font-weight: 800;
+        }
+
+        .meeting-section p {
+            color: #ffffff;
+            font-size: 14px;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .meeting-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .meeting-option {
+            background-color: rgba(248, 52, 41, 0.1);
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #F83429;
+            font-size: 12px;
+            font-weight: 700;
+            color: #F83429;
+        }
+
+        /* ===== SCARCITY SECTION ===== */
+        .scarcity-section {
+            background-color: #fff3f0;
+            padding: 25px;
+            margin: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #F83429;
+            text-align: center;
+        }
+
+        .scarcity-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .scarcity-section h2 {
+            color: #132757;
+            font-size: 20px;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .scarcity-section p {
+            color: #555;
+            font-size: 14px;
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .vagas-counter {
+            background-color: #F83429;
+            color: #ffffff;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 16px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        /* ===== INSTAGRAM FOLLOWER BONUS ===== */
+        .instagram-bonus {
+            background: linear-gradient(135deg, #e1306c 0%, #fd1d1d 100%);
+            color: #ffffff;
+            padding: 25px;
+            margin: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .instagram-bonus h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .instagram-bonus p {
+            font-size: 14px;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .instagram-icon-link {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 12px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            margin: 5px;
+        }
+
+        .instagram-icon-link:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .instagram-icon-link::before {
+            content: '📱 ';
+        }
+
+        /* ===== SOCIAL PROOF ===== */
+        .social-proof {
+            background-color: #f0f5f7;
+            padding: 20px 25px;
+            text-align: center;
+            border-radius: 6px;
+            margin: 20px;
+        }
+
+        .social-proof p {
+            color: #555;
+            font-size: 13px;
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+
+        .social-proof strong {
+            color: #F83429;
+            font-weight: 700;
+        }
+
+        /* ===== CTA BUTTONS ===== */
+        .cta-section {
+            padding: 30px 25px;
+            text-align: center;
+            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+        }
+
+        .cta-section h2 {
+            color: #132757;
+            font-size: 22px;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .cta-section p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            border: 2px solid;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .cta-button-primary {
+            background-color: #F83429;
+            color: #ffffff;
+            border-color: #F83429;
+        }
+
+        .cta-button-primary:hover {
+            background-color: #d62817;
+            border-color: #d62817;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(248, 52, 41, 0.3);
+        }
+
+        .cta-button-secondary {
+            background-color: #132757;
+            color: #ffffff;
+            border-color: #132757;
+        }
+
+        .cta-button-secondary:hover {
+            background-color: #0a1a3a;
+            border-color: #0a1a3a;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(19, 39, 87, 0.3);
+        }
+
+        .cta-button::before {
+            margin-right: 8px;
+        }
+
+        .cta-button-whatsapp::before {
+            content: '💬 ';
+        }
+
+        .cta-button-portfolio::before {
+            content: '🎨 ';
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background-color: #132757;
+            color: #ffffff;
+            padding: 25px 20px;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .footer-content {
+            margin-bottom: 15px;
+        }
+
+        .footer-content p {
+            margin: 6px 0;
+            line-height: 1.6;
+        }
+
+        .footer-contact {
+            background-color: rgba(248, 52, 41, 0.1);
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+
+        .footer-contact a {
+            color: #F83429;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .footer-contact p {
+            margin: 5px 0;
+        }
+
+        .social-links {
+            margin: 15px 0;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 0 8px;
+            color: #F83429;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #ffffff;
+        }
+
+        .footer-divider {
+            border-top: 1px solid #F83429;
+            margin: 15px 0;
+        }
+
+        .footer-legal {
+            color: #999;
+            margin-top: 12px;
+            font-size: 11px;
+        }
+
+        .footer-legal a {
+            color: #F83429;
+            text-decoration: none;
+        }
+
+        .unsubscribe {
+            color: #999;
+            margin-top: 12px;
+            font-size: 11px;
+        }
+
+        .unsubscribe a {
+            color: #F83429;
+            text-decoration: none;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 600px) {
+            .email-container {
+                max-width: 100%;
+            }
+
+            .greeting-section h1 {
+                font-size: 24px;
+            }
+
+            .cta-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            .meeting-options {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-button {
+                padding: 14px 20px;
+                font-size: 13px;
+            }
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            animation: slideInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- HEADER -->
+        <div class="header">
+            <div class="logo">
+                <img src="[LOGO_URL]" alt="MARKETING BRUVI">
+            </div>
+        </div>
+
+        <!-- PERSONALIZED GREETING -->
+        <div class="greeting-section animate-in">
+            <h1>Oi, <span class="client-name">*|FNAME|*</span>! 👋</h1>
+            <p>Analisei sua situação em <strong>*|NICHE|*</strong> na região de <strong>*|REGION|*</strong> e preparei uma estratégia personalizada especialmente para você.</p>
+            <p>Vamos conversar sobre como transformar seu negócio? Tenho certeza que temos muito a discutir.</p>
+        </div>
+
+        <!-- HUMAN CONNECTION SECTION -->
+        <div class="human-connection animate-in">
+            <h2>💬 Vamos Conversar?</h2>
+            <p>Acredito que a melhor forma de entender seu negócio é através de uma <em>conversa direta</em>. Seja por uma <em>reunião rápida</em>, <em>vídeo chamada</em> ou até mesmo por mensagem, estou aqui para ouvir seus desafios e apresentar soluções reais.</p>
+            <p>Não é sobre vender, é sobre <em>construir uma parceria</em> que funcione para você.</p>
+        </div>
+
+        <!-- COMPETITION ALERT -->
+        <div class="competition-alert animate-in">
+            <h3>⚠️ Atenção: Seu Concorrente Não Está Esperando</h3>
+            <p>Enquanto você lê este e-mail, seus concorrentes em <strong>*|REGION|*</strong> estão investindo em estratégias de marketing digital.</p>
+            <p>Cada dia que passa, eles ganham mais visibilidade, mais leads e mais vendas. <strong>Não deixe isso acontecer com você.</strong></p>
+            <div class="competitor-warning">
+                🏃 CORRA ANTES QUE PASSEM NA SUA FRENTE!
+            </div>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <div class="content-section animate-in">
+            <h2>Sua Situação Atual em *|NICHE|*</h2>
+            <p>Entendo que você está em um momento crítico. Provavelmente está sentindo que:</p>
+            <p>✓ Seu marketing digital não está gerando os resultados esperados<br>
+            ✓ Você investe em tráfego, mas nem sempre vê retorno<br>
+            ✓ Precisa de uma estratégia clara e personalizada<br>
+            ✓ Quer um parceiro que realmente entenda seu negócio</p>
+            <p>É exatamente aqui que entramos. A <span class="highlight-text">MARKETING BRUVI</span> existe para transformar essa realidade.</p>
+        </div>
+
+        <!-- PERSONALIZED STRATEGY SECTION -->
+        <div class="strategy-section animate-in">
+            <h3>🎯 Estratégia Personalizada para Seu Momento</h3>
+            
+            <div class="strategy-item">
+                <h4>📊 Diagnóstico Real do Seu Negócio</h4>
+                <p>Vamos analisar juntos o que está funcionando e o que precisa mudar em sua estratégia atual.</p>
+            </div>
+
+            <div class="strategy-item">
+                <h4>🎨 Estratégia Customizada para *|NICHE|*</h4>
+                <p>Não existe solução genérica. Sua estratégia será 100% personalizada para o seu segmento e momento atual.</p>
+            </div>
+
+            <div class="strategy-item">
+                <h4>📱 Implementação com Suporte Contínuo</h4>
+                <p>Não é apenas um plano. Vamos implementar juntos e eu estarei ao seu lado em cada passo.</p>
+            </div>
+
+            <div class="strategy-item">
+                <h4>🚀 Resultados Mensuráveis</h4>
+                <p>Você vai acompanhar cada métrica, cada resultado. Transparência total é nosso compromisso.</p>
+            </div>
+        </div>
+
+        <!-- PDF PRESENTATION SECTION - VARIAÇÃO 2 -->
+        <div class="pdf-presentation animate-in">
+            <h2>🎯 Descubra Nossa Metodologia</h2>
+            <p>Conheça o passo a passo que usamos para transformar negócios. Veja como aplicamos estratégias comprovadas de tráfego pago, social media e branding para gerar resultados reais.</p>
+            <a href="https://bit.ly/3ZmDSUE" class="pdf-button" target="_blank">
+                Acessar Metodologia
+            </a>
+        </div>
+
+        <!-- MEETING CALL TO ACTION -->
+        <div class="meeting-section animate-in">
+            <h2>Vamos Agendar Uma Conversa?</h2>
+            <p>Podemos fazer de forma que seja mais confortável para você:</p>
+            <div class="meeting-options">
+                <div class="meeting-option">📞 Vídeo Chamada</div>
+                <div class="meeting-option">☕ Reunião Presencial</div>
+            </div>
+            <p style="margin-top: 15px; font-size: 13px;">Sem compromisso. Apenas uma conversa honesta sobre seu negócio.</p>
+        </div>
+
+        <!-- SCARCITY SECTION -->
+        <div class="scarcity-section animate-in">
+            <div class="scarcity-icon">🎯</div>
+            <h2>Vagas Limitadas para Consultoria</h2>
+            <p>Mantenho um número reduzido de clientes para garantir atenção 100% personalizada a cada um.</p>
+            <div class="vagas-counter">
+                ⚡ VAGAS RESTANTES: [VAGAS_COUNTER]/5
+            </div>
+        </div>
+
+        <!-- INSTAGRAM FOLLOWER BONUS -->
+        <div class="instagram-bonus animate-in">
+            <h3>📸 Bônus Exclusivo para Seguidores</h3>
+            <p>Siga nosso Instagram <strong>@marketing.bruvi</strong> e ganhe <strong>DESCONTO ESPECIAL</strong> + Acesso a Conteúdo Exclusivo de Marketing Digital</p>
+            <a href="https://www.instagram.com/marketing.bruvi" class="instagram-icon-link">
+                Seguir @marketing.bruvi Agora
+            </a>
+        </div>
+
+        <!-- SOCIAL PROOF -->
+        <div class="social-proof animate-in">
+            <p><strong>Agência especializada</strong> em tráfego pago, estratégia e social media</p>
+            <p><strong>R$ 25k+</strong> em verba gerenciada com sucesso</p>
+            <p><strong>Resultados comprovados</strong> para clientes em diversos nichos</p>
+            <p><strong>Abordagem humanizada</strong> e parceria real com cada cliente</p>
+        </div>
+
+        <!-- CTA SECTION -->
+        <div class="cta-section animate-in">
+            <h2>Próximos Passos</h2>
+            <p>Estou pronto para conversar sobre como transformar seu negócio em <strong>*|REGION|*</strong>. Qual é a melhor forma para você?</p>
+            
+            <div class="cta-buttons">
+                <a href="https://wa.me/5511912548292?text=Oi%20Bruno!%20Gostaria%20de%20agendar%20uma%20conversa%20sobre%20minha%20estratégia%20de%20marketing%20em%20*|NICHE|*" class="cta-button cta-button-primary">
+                    Falar no WhatsApp
+                </a>
+                <a href="https://www.behance.net/brunovinicius-bruvi" class="cta-button cta-button-secondary">
+                    Ver Portfólio
+                </a>
+            </div>
+
+            <p style="margin-top: 15px; font-size: 12px; color: #999;">
+                Respondo em até 2 horas. Vamos conversar? 👋
+            </p>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <div class="footer-content">
+                <p><strong>MARKETING BRUVI</strong></p>
+                <p>Agência de Marketing Digital | Tráfego Pago | Estratégia | Social Media</p>
+            </div>
+
+            <div class="footer-contact">
+                <p>📞 <a href="https://wa.me/5511912548292">(11) 91254-8292</a></p>
+                <p>📧 <a href="mailto:contato@bruvimarketing.site">contato@bruvimarketing.site</a></p>
+                <p>🌐 <a href="https://bruvimarketing.site">bruvimarketing.site</a></p>
+                <p>📋 CNPJ: 47.851.981-0001/44</p>
+            </div>
+
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/brunovinicius-bruvi/">LinkedIn</a>
+                <a href="https://www.instagram.com/marketing.bruvi">Instagram</a>
+                <a href="https://www.behance.net/brunovinicius-bruvi">Behance</a>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-content">
+                <p>© 2026 MARKETING BRUVI. Todos os direitos reservados.</p>
+            </div>
+
+            <div class="footer-legal">
+                <p>Você recebeu este e-mail porque está cadastrado em nossa lista de contatos.</p>
+                <p><a href="*|UNSUB|*">Descadastrar-se</a> | <a href="*|PREFERENCES|*">Gerenciar Preferências</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

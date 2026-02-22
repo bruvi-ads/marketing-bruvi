@@ -1,0 +1,101 @@
+haja como especialista mestre doutor com conhecimentos aprofundados em marketing, marketing digital, tráfego pago, meta ads, Google Ads, funil de vendas, copywriter, persuasão, gatilhos mentais, psicologia de cores, soluções, estruturação de funis, jornada de clientes, criação de sites, landing pages, headlines, Google Meu Negócio e tudo o que engloba esse assunto. Dentro do contexto de que você é dona de uma agência de marketing digital onde abrange tudo isso. E está fazendo uma campanha de e-mail marketing onde nesse e-mail marketing você envia um texto com copy, um botão onde clique e acessa um mini PDF explicando sobre a nossa agência e os serviços que ela presta e o botão do WhatsApp no final. Estamos usando a sender para envio desse e-mail marketing em massa, onde o nome da agência é BRUVI Marketing. E o site, o domínio é .site, ou seja, o site é bruvimarketing.site, soletrando BRUVI, M-A-R-K-E-T-I-N-G .site.
+Te mandarei o template que eu estava usando nos e-mails, porém ele estava chegando na caixa de e-mail dos clientes, dos possíveis clientes, né? Frios, como spam, indo direto para a caixa de spam. E como isso é muito maléfico a esse trabalho de email marketing, alteramos esse modelo que eu iria te mandar e deixamos mais simples. Te mandarei também a HTML desse mais simples. Porém, mesmo assim, pelo PDF estar hospedado no Google Drive, as caixas de e-mail já mandam direto para spam, por causa do link do Google Drive nesse botão, né? E minha ideia foi criar uma landing page em vez de usar o PDF, que eu também vou te mandar. E quando clica no botão que antes iria para o PDF hospedado no Google Drive, agora quero que clique no botão e abra a landing page. Essa landing page vai ser o código inicialmente que eu vou criar com você, depois vou replicar no low-level e vou aprimorar no replit, usando hospedagem Hostinger. Quero algo muito bem feito, completo, profissional, com os mínimos detalhes. De o seu melhor. <!DOCTYPE html>
+<html>
+<body style="margin:0; padding:0; background:#f4f4f4; font-family: Arial, sans-serif;">
+
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center" style="padding:30px 15px;">
+
+<table width="600" cellpadding="0" cellspacing="0" style="background:#ffffff; padding:35px;">
+
+<tr>
+<td style="font-size:20px; font-weight:bold; color:#132757; padding-bottom:15px;">
+Olá{{ first_name | default:"" }},
+</td>
+</tr>
+
+<tr>
+<td style="font-size:14px; color:#333; line-height:1.7; padding-bottom:15px;">
+Analisei sua presença digital no segmento de <strong>{{ niche | default:"atuação" }}</strong> em <strong>{{ region | default:"sua região" }}</strong> e identifiquei oportunidades claras de crescimento estratégico.
+</td>
+</tr>
+
+<tr>
+<td style="font-size:14px; color:#333; line-height:1.7; padding-bottom:15px;">
+Muitas empresas investem em redes sociais ou tráfego pago, mas sem uma estrutura integrada de posicionamento, funil e conversão.
+</td>
+</tr>
+
+<tr>
+<td style="font-size:14px; color:#333; line-height:1.7; padding-bottom:20px;">
+Na <strong>Agência Bruvi Marketing</strong>, trabalhamos com:
+<br><br>
+• Gestão estratégica de Social Media<br>
+• Tráfego Pago orientado a resultado<br>
+• Estruturação completa de funis de venda<br>
+• Otimização de conversão e previsibilidade
+</td>
+</tr>
+
+<tr>
+<td style="font-size:14px; color:#333; line-height:1.7; padding-bottom:20px;">
+Nossa metodologia é baseada em três pilares:
+<br><br>
+<strong>Diagnóstico estratégico</strong><br>
+<strong>Estruturação inteligente</strong><br>
+<strong>Crescimento previsível</strong>
+</td>
+</tr>
+
+<tr>
+<td style="font-size:14px; color:#333; line-height:1.7; padding-bottom:15px;">
+Preparei um material explicando como aplicamos isso na prática:
+</td>
+</tr>
+
+<tr>
+<td align="left" style="padding-bottom:30px;">
+<a href="https://drive.google.com/file/d/1J5FROZAE9LmGQaKQAJcnSu7ytgUVKnUo/view" style="background:#F47B20; color:#ffffff; text-decoration:none; padding:14px 24px; font-size:14px; font-weight:bold; border-radius:4px; display:inline-block;">
+Acessar metodologia
+</a>
+</td>
+</tr>
+
+<tr>
+<td style="font-size:14px; color:#333; line-height:1.7; padding-bottom:20px;">
+Se fizer sentido para você, podemos conversar rapidamente para entender como aplicar essa estrutura ao seu negócio.
+</td>
+</tr>
+
+<tr>
+<td align="left" style="padding-bottom:30px;">
+<a href="https://wa.me/5511912548292" style="background:#1E3A8A; color:#ffffff; text-decoration:none; padding:14px 24px; font-size:14px; font-weight:bold; border-radius:4px; display:inline-block;">
+Conversar no WhatsApp
+</a>
+</td>
+</tr>
+
+<tr>
+<td style="font-size:13px; color:#555; border-top:1px solid #eee; padding-top:20px;">
+Bruno Vinícius<br>
+Agência Bruvi Marketing<br>
+contato@bruvimarketing.site<br>
+bruvimarketing.site
+</td>
+</tr>
+
+<tr>
+<td style="font-size:11px; color:#999; padding-top:15px;">
+Se preferir não receber novas mensagens, <a href="{{ unsubscribe_url }}" style="color:#999;">clique aqui</a>.
+</td>
+</tr>
+
+</table>
+
+</td>
+</tr>
+</table>
+
+</body>
+</html>.       OBSERVAÇÃO: ESSE HTML WCIMA É O ATUAL ANTI-SPAM, O ANEXADO DE NOME AMARELO ERA O ANTERIOR QUE IA DIRETO PRA SPAM, O PDF É O QUE QUERO SUBSTITUIR PELA LANDING PAGE QUE CRIAREMOS AGORA, A IMAGEM É A LOGO DA AGÊNCIA
