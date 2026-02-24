@@ -17,7 +17,7 @@ import {
   PhoneCall,
   HelpCircle
 } from "lucide-react";
-import logo from "@assets/4_1771722650806.png";
+import logo from "@assets/4_1771722650806-ZjcIMUCs-removebg-preview_1771933315935.png";
 import { Button } from "@/components/ui/button";
 import { FeatureCard } from "@/components/FeatureCard";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -37,7 +37,7 @@ export default function LandingPage() {
       <header className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm">
         <div className="container mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <img src={logo} alt="Bruvi Marketing" className="h-10 md:h-12 w-auto object-contain" style={{ mixBlendMode: 'multiply', filter: 'contrast(1.1)' }} />
+            <img src={logo} alt="Bruno Vinícius Ads" className="h-10 md:h-14 w-auto object-contain" />
           </div>
           <Button 
             className="bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/20 transition-all hover:scale-105"
