@@ -1,0 +1,5 @@
+name = "bruvi-marketing"
+pages_build_output_dir = "dist/public"
+compatibility_date = "2024-03-20"
+
+# Note: Set DATABASE_URL as an environment variable in the Cloudflare Dashboard
