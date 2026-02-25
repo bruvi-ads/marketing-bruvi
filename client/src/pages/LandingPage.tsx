@@ -1,22 +1,28 @@
-import { motion } from "framer-motion";
 import { 
-  ArrowRight, 
-  BarChart3, 
-  CheckCircle2, 
-  ChevronRight, 
-  LineChart, 
-  MessageSquare, 
-  Target, 
-  TrendingUp, 
-  Users,
-  ShieldCheck,
-  Zap,
-  Clock,
-  ThumbsUp,
-  Award,
-  PhoneCall,
-  HelpCircle
-} from "lucide-react";
+    ArrowRight, 
+    BarChart3, 
+    CheckCircle2, 
+    ChevronRight, 
+    LineChart, 
+    MessageSquare, 
+    Target, 
+    TrendingUp, 
+    Users,
+    ShieldCheck,
+    Zap,
+    Clock,
+    ThumbsUp,
+    Award,
+    PhoneCall,
+    HelpCircle,
+    Sparkles,
+    Globe,
+    Cpu,
+    Layers,
+    Rocket,
+    MousePointer2,
+    Infinity
+  } from "lucide-react";
 import logo from "@assets/4_1771722650806-ZjcIMUCs-removebg-preview_1771933315935.png";
 import { Button } from "@/components/ui/button";
 import { FeatureCard } from "@/components/FeatureCard";
@@ -32,7 +38,36 @@ export default function LandingPage() {
   const whatsappUrl = "https://wa.me/5511912548292";
 
   return (
-    <div className="min-h-screen bg-background font-sans overflow-x-hidden">
+    <>
+      
+        <style dangerouslySetInnerHTML={{ __html: `
+          @keyframes slow-pan {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+          }
+          .animate-gradient {
+            background-size: 200% 200%;
+            animation: slow-pan 15s ease infinite;
+          }
+          .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+          }
+          .text-glow {
+            text-shadow: 0 0 20px rgba(234, 88, 12, 0.5);
+          }
+          .hero-mesh {
+            background-color: #0A1225;
+            background-image: 
+              radial-gradient(at 0% 0%, hsla(20,100%,16%,1) 0, transparent 50%), 
+              radial-gradient(at 50% 0%, hsla(220,100%,10%,1) 0, transparent 50%), 
+              radial-gradient(at 100% 0%, hsla(15,100%,15%,1) 0, transparent 50%);
+          }
+        ` }} />
+<div className="min-h-screen bg-background font-sans overflow-x-hidden">
       {/* Header/Nav */}
       <header className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm">
         <div className="container mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
@@ -50,7 +85,7 @@ export default function LandingPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden hero-gradient perspective-1000">
+      <section className="relative pt-32 pb-20 md:pt-48 md:pb-40 overflow-hidden hero-mesh perspective-1000 animate-gradient">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2574&auto=format&fit=crop')] opacity-10 bg-cover bg-center mix-blend-overlay" />
         <div className="absolute top-0 right-0 w-full md:w-1/2 h-full bg-gradient-to-l from-primary/10 to-transparent" />
         
@@ -66,13 +101,13 @@ export default function LandingPage() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
                 </span>
-                Agência de Marketing de Elite
+                <Sparkles className="w-4 h-4 text-primary animate-pulse" /> Tecnologia Ads de Próxima Geração
               </div>
               
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6 tracking-tight drop-shadow-lg">
                 Pare de "Tentar" Vender e <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-400 drop-shadow-md">
-                  Comece a Dominar
+                  Domine o Digital <span className="absolute -bottom-2 left-0 w-full h-1 bg-primary/30 blur-sm"></span>
                 </span>
               </h1>
               
@@ -221,6 +256,19 @@ export default function LandingPage() {
         </div>
       </section>
 
+      
+        {/* Tech Performance Section */}
+        <section className="py-12 bg-[#050A18] overflow-hidden border-y border-white/5">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
+               <div className="flex items-center gap-2 text-white font-bold"><Layers className="w-6 h-6"/> BIG DATA</div>
+               <div className="flex items-center gap-2 text-white font-bold"><Cpu className="w-6 h-6"/> AI OPTIMIZATION</div>
+               <div className="flex items-center gap-2 text-white font-bold"><Globe className="w-6 h-6"/> GLOBAL REACH</div>
+               <div className="flex items-center gap-2 text-white font-bold"><Infinity className="w-6 h-6"/> SCALE READY</div>
+            </div>
+          </div>
+        </section>
+    
       {/* Services Section */}
       <section className="py-16 md:py-24 bg-gray-50/50">
         <div className="container mx-auto px-4 md:px-6">
@@ -232,8 +280,8 @@ export default function LandingPage() {
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 perspective-1000">
             <motion.div whileHover={{ y: -10, rotateX: 5, rotateY: -5, z: 50 }} className="h-full">
               <FeatureCard 
-                icon={Target}
-                title="Tráfego Pago (Google & Meta)"
+                icon={Cpu}
+                title="Inteligência em Tráfego Pago"
                 description="Anúncios que perseguem seu cliente ideal até ele clicar. Focamos em ROI, não em métricas de vaidade."
                 delay={0.1}
               />
@@ -489,32 +537,34 @@ export default function LandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#0A1225] border-t border-white/10 py-12 md:py-16 text-white/60 text-sm">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid md:grid-cols-3 gap-10 items-center">
-            <div className="flex flex-col items-center md:items-start gap-4">
-              <img src={logo} alt="Bruvi Logo" className="h-10 brightness-0 invert opacity-70" />
-              <p className="text-center md:text-left max-w-xs">
-                Transformando negócios locais em máquinas previsíveis de vendas através do marketing de performance.
-              </p>
-            </div>
-            
-            <div className="flex flex-col items-center gap-3">
-              <h4 className="text-white/90 font-bold mb-2 uppercase tracking-wider">Contato Direto</h4>
-              <a href={whatsappUrl} className="hover:text-primary transition-colors flex items-center gap-2">
-                <MessageSquare className="w-4 h-4" /> (11) 91254-8292
-              </a>
-              <a href="mailto:contato@bruvimarketing.com.br" className="hover:text-primary transition-colors flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4" /> contato@bruvimarketing.com.br
-              </a>
-            </div>
-            
-            <div className="flex flex-col items-center md:items-end gap-4">
-              <p>&copy; {new Date().getFullYear()} Bruno Vinícius Ads. CNPJ: 47.851.981/0001-44.</p>
+      
+        <footer className="bg-[#0A1225] border-t border-white/10 py-12 md:py-16 text-white/60 text-sm">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="grid md:grid-cols-3 gap-10 items-center">
+              <div className="flex flex-col items-center md:items-start gap-4">
+                <img src={logo} alt="Bruno Vinícius Ads" className="h-10 brightness-0 invert opacity-70" />
+                <p className="text-center md:text-left max-w-xs">
+                  Transformando negócios locais em máquinas previsíveis de vendas através do marketing de performance.
+                </p>
+              </div>
+              
+              <div className="flex flex-col items-center gap-3">
+                <h4 className="text-white/90 font-bold mb-2 uppercase tracking-wider">Contato Direto</h4>
+                <a href={whatsappUrl} className="hover:text-primary transition-colors flex items-center gap-2">
+                  <MessageSquare className="w-4 h-4" /> (11) 91254-8292
+                </a>
+                <a href="mailto:contato@bruvimarketing.com.br" className="hover:text-primary transition-colors flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4" /> contato@bruvimarketing.com.br
+                </a>
+              </div>
+              
+              <div className="flex flex-col items-center md:items-end gap-4">
+                <p>&copy; {new Date().getFullYear()} Bruno Vinícius Ads. CNPJ: 47.851.981/0001-44. | Desenvolvido com Tecnologia de Ponta.</p>
+              </div>
             </div>
           </div>
-        </div>
-      </footer>
-    </div>
-  );
-}
+        </footer>
+      </div>
+    </>
+    );
+  }
