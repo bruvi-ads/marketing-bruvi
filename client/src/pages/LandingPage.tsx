@@ -436,7 +436,7 @@ export default function LandingPage() {
             <AccordionItem value="item-3" className="border-b border-gray-200 py-2">
               <AccordionTrigger className="text-left font-bold text-lg hover:text-primary">Qual o investimento mínimo recomendado em anúncios?</AccordionTrigger>
               <AccordionContent className="text-muted-foreground text-base leading-relaxed">
-                Para negócios locais, recomendamos um investimento mínimo inicial de R$ 1.000 a R$ 1.500 por mês diretamente nas plataformas (Google/Facebook). Isso garante volume suficiente de dados para o algoritmo encontrar os melhores clientes da sua região.
+                Para negócios locais, recomendamos um investimento mínimo inicial de R$ 400 a R$ 500 por mês diretamente nas plataformas (Google/Facebook). Isso garante que você comece a aparecer para clientes da sua região com um investimento acessível.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-4" className="border-b border-gray-200 py-2">
@@ -510,11 +510,7 @@ export default function LandingPage() {
             </div>
             
             <div className="flex flex-col items-center md:items-end gap-4">
-              <div className="flex gap-6">
-                <a href="#" className="hover:text-white transition-colors">Termos de Uso</a>
-                <a href="#" className="hover:text-white transition-colors">Política de Privacidade</a>
-              </div>
-              <p>&copy; {new Date().getFullYear()} Bruvi Marketing. CNPJ: XX.XXX.XXX/0001-XX.</p>
+              <p>&copy; {new Date().getFullYear()} Bruno Vinícius Ads. CNPJ: 47.851.981/0001-44.</p>
             </div>
           </div>
         </div>
