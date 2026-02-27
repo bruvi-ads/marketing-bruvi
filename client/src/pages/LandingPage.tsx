@@ -1,36 +1,28 @@
 import { motion } from "framer-motion";
 import { 
-    ArrowRight,
-  BarChart3,
-  CheckCircle2,
-  ChevronRight,
-  LineChart,
-  MessageSquare,
-  Target,
-  TrendingUp,
-  Users,
-  ShieldCheck,
-  Zap,
-  Clock,
-  ThumbsUp,
-  Award,
-  PhoneCall,
-  HelpCircle,
-  Sparkles,
-  Globe,
-  Cpu,
-  Layers,
-  Rocket,
-  MousePointer2,
-  Infinity,
-  ZapOff,
-  Trophy,
-  Gem,
-  Fingerprint,
-  BarChart,
-  Activity,
-  PieChart,
-  Monitor
+    ArrowRight, 
+    BarChart3, 
+    CheckCircle2, 
+    ChevronRight, 
+    LineChart, 
+    MessageSquare, 
+    Target, 
+    TrendingUp, 
+    Users,
+    ShieldCheck,
+    Zap,
+    Clock,
+    ThumbsUp,
+    Award,
+    PhoneCall,
+    HelpCircle,
+    Sparkles,
+    Globe,
+    Cpu,
+    Layers,
+    Rocket,
+    MousePointer2,
+    Infinity
   } from "lucide-react";
 import logo from "@assets/4_1771722650806-ZjcIMUCs-removebg-preview_1771933315935.png";
 import { Button } from "@/components/ui/button";
@@ -75,48 +67,8 @@ export default function LandingPage() {
               radial-gradient(at 50% 0%, hsla(220,100%,10%,1) 0, transparent 50%), 
               radial-gradient(at 100% 0%, hsla(15,100%,15%,1) 0, transparent 50%);
           }
-        
-          .noise {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            content: "";
-            opacity: 0.05;
-            z-index: 9999;
-            pointer-events: none;
-            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-          }
-          .float-3d {
-            animation: float 6s ease-in-out infinite;
-            transform-style: preserve-3d;
-          }
-          @keyframes float {
-            0%, 100% { transform: translateY(0) rotateX(0) rotateY(0); }
-            50% { transform: translateY(-20px) rotateX(5deg) rotateY(5deg); }
-          }
-          .glow-border {
-            position: relative;
-          }
-          .glow-border::after {
-            content: "";
-            position: absolute;
-            inset: -1px;
-            background: linear-gradient(45deg, transparent, rgba(234, 88, 12, 0.3), transparent);
-            z-index: -1;
-            border-radius: inherit;
-            animation: border-glow 4s linear infinite;
-          }
-          @keyframes border-glow {
-            0% { opacity: 0.3; }
-            50% { opacity: 1; }
-            100% { opacity: 0.3; }
-          }
-    
-      ` }} />
-<div className="noise" />
-    <div className="min-h-screen bg-background font-sans overflow-x-hidden">
+        ` }} />
+<div className="min-h-screen bg-background font-sans overflow-x-hidden">
       {/* Header/Nav */}
       <header className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm">
         <div className="container mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
@@ -133,27 +85,6 @@ export default function LandingPage() {
         </div>
       </header>
 
-      
-        {/* Proof of Authority / Trust Signals */}
-        <section className="py-12 bg-white/5 backdrop-blur-sm border-y border-white/10">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center opacity-60">
-              <div className="flex items-center gap-2 text-white font-medium uppercase tracking-widest text-xs md:text-sm">
-                <ShieldCheck className="w-5 h-5 text-primary" /> Verificado Google
-              </div>
-              <div className="flex items-center gap-2 text-white font-medium uppercase tracking-widest text-xs md:text-sm">
-                <Trophy className="w-5 h-5 text-primary" /> Top 1% Performance
-              </div>
-              <div className="flex items-center gap-2 text-white font-medium uppercase tracking-widest text-xs md:text-sm">
-                <Gem className="w-5 h-5 text-primary" /> Estratégia VIP
-              </div>
-              <div className="flex items-center gap-2 text-white font-medium uppercase tracking-widest text-xs md:text-sm">
-                <Fingerprint className="w-5 h-5 text-primary" /> Método Exclusivo
-              </div>
-            </div>
-          </div>
-        </section>
-    
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 md:pt-48 md:pb-40 overflow-hidden hero-mesh perspective-1000 animate-gradient">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2574&auto=format&fit=crop')] opacity-10 bg-cover bg-center mix-blend-overlay" />
@@ -203,22 +134,6 @@ export default function LandingPage() {
                   SABER MAIS
                 </Button>
               </div>
-            
-                <div className="mt-12 grid grid-cols-3 gap-4 border-t border-white/10 pt-8">
-                  <div className="text-center">
-                    <p className="text-2xl md:text-3xl font-black text-white">+R$10M</p>
-                    <p className="text-[10px] md:text-xs text-gray-400 uppercase">Geridos em Ads</p>
-                  </div>
-                  <div className="text-center">
-                    <p className="text-2xl md:text-3xl font-black text-white">+500</p>
-                    <p className="text-[10px] md:text-xs text-gray-400 uppercase">Negócios Locais</p>
-                  </div>
-                  <div className="text-center">
-                    <p className="text-2xl md:text-3xl font-black text-white">ROI 5x</p>
-                    <p className="text-[10px] md:text-xs text-gray-400 uppercase">Média Geral</p>
-                  </div>
-                </div>
-    
             </motion.div>
             
             <motion.div
@@ -497,38 +412,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      
-        {/* Roadmap Section */}
-        <section className="py-20 md:py-32 bg-[#050A18] relative overflow-hidden">
-          <div className="container mx-auto px-4 md:px-6">
-            <SectionHeading 
-              title="O Caminho para a Dominação" 
-              subtitle="Nosso processo técnico de 4 etapas para colocar sua empresa no topo."
-            />
-            <div className="grid md:grid-cols-4 gap-8 mt-16">
-              {[
-                { step: "01", title: "Diagnóstico", icon: Activity, desc: "Análise profunda do seu mercado e concorrentes." },
-                { step: "02", title: "Setup Tech", icon: Monitor, desc: "Configuração de rastreamento e IA de conversão." },
-                { step: "03", title: "Escala Ads", icon: Rocket, desc: "Lançamento de campanhas agressivas de tração." },
-                { step: "04", title: "Otimização", icon: BarChart, desc: "Ajustes diários para maximizar seu lucro." }
-              ].map((item, idx) => (
-                <motion.div 
-                  key={idx}
-                  whileHover={{ y: -10 }}
-                  className="relative p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl group hover:border-primary/50 transition-all"
-                >
-                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-primary rounded-2xl flex items-center justify-center text-xl font-black text-white shadow-lg shadow-primary/40">
-                    {item.step}
-                  </div>
-                  <item.icon className="w-10 h-10 text-primary mb-6 group-hover:scale-110 transition-transform" />
-                  <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
-                  <p className="text-gray-400 text-sm">{item.desc}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-    
       {/* Objection Killers */}
       <section className="py-16 md:py-24 bg-gray-50 border-y border-gray-200">
         <div className="container mx-auto px-4 md:px-6">
