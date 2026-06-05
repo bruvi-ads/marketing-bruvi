@@ -292,7 +292,7 @@ export default function LandingPage() {
         >
           <div className="container mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
             <motion.div whileHover={{ scale: 1.05 }} className="flex items-center gap-2">
-              <img src={logo} alt="Bruvi Ads" className="h-16 md:h-20 w-auto object-contain" />
+              <img src={logo} alt="Bruvi Ads" className="h-16 md:h-[4.5rem] w-auto object-contain drop-shadow-[0_0_8px_rgba(229,57,53,0.35)]" />
             </motion.div>
             <motion.div ref={waMagnet.ref} style={{ x: waMagnet.x, y: waMagnet.y }}>
               <Button
@@ -307,7 +307,7 @@ export default function LandingPage() {
         </motion.header>
 
         {/* ── HERO ── */}
-        <section className="relative pt-32 pb-24 md:pt-52 md:pb-40 overflow-hidden hero-mesh grid-bg min-h-screen flex items-center">
+        <section className="relative pt-24 pb-20 md:pt-32 md:pb-32 overflow-hidden hero-mesh grid-bg min-h-screen flex items-center">
           <Particles />
           <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none" />
 
