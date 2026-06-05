@@ -24,7 +24,7 @@ import {
     MousePointer2,
     Infinity
   } from "lucide-react";
-import logo from "@assets/4_1771722650806-ZjcIMUCs-removebg-preview_1771933315935.png";
+import logo from "@assets/file_00000000c8cc720e9f37c888c24f18d0_1780687139614.png";
 import { Button } from "@/components/ui/button";
 import { FeatureCard } from "@/components/FeatureCard";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -36,7 +36,7 @@ import {
 } from "@/components/ui/accordion";
 
 export default function LandingPage() {
-  const whatsappUrl = "https://wa.me/5511912548292";
+  const whatsappUrl = "https://wa.me/5511925710645";
 
   return (
     <>
@@ -73,7 +73,7 @@ export default function LandingPage() {
       <header className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm">
         <div className="container mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <img src={logo} alt="Bruno Vinícius Ads" className="h-10 md:h-14 w-auto object-contain" />
+            <img src={logo} alt="Bruvi Ads" className="h-12 md:h-16 w-auto object-contain" />
           </div>
           <Button 
             className="bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/20 transition-all hover:scale-105"
@@ -543,7 +543,7 @@ export default function LandingPage() {
           <div className="container mx-auto px-4 md:px-6">
             <div className="grid md:grid-cols-3 gap-10 items-center">
               <div className="flex flex-col items-center md:items-start gap-4">
-                <img src={logo} alt="Bruno Vinícius Ads" className="h-10 brightness-0 invert opacity-70" />
+                <img src={logo} alt="Bruvi Ads" className="h-14 w-auto object-contain opacity-80" />
                 <p className="text-center md:text-left max-w-xs">
                   Transformando negócios locais em máquinas previsíveis de vendas através do marketing de performance.
                 </p>
@@ -552,7 +552,7 @@ export default function LandingPage() {
               <div className="flex flex-col items-center gap-3">
                 <h4 className="text-white/90 font-bold mb-2 uppercase tracking-wider">Contato Direto</h4>
                 <a href={whatsappUrl} className="hover:text-primary transition-colors flex items-center gap-2">
-                  <MessageSquare className="w-4 h-4" /> (11) 91254-8292
+                  <MessageSquare className="w-4 h-4" /> (11) 92571-0645
                 </a>
                 <a href="mailto:contato@bruvimarketing.com.br" className="hover:text-primary transition-colors flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4" /> contato@bruvimarketing.com.br
@@ -560,7 +560,7 @@ export default function LandingPage() {
               </div>
               
               <div className="flex flex-col items-center md:items-end gap-4">
-                <p>&copy; {new Date().getFullYear()} Bruno Vinícius Ads. CNPJ: 47.851.981/0001-44. | Desenvolvido com Tecnologia de Ponta.</p>
+                <p>&copy; {new Date().getFullYear()} Bruvi Ads. Desenvolvido com Tecnologia de Ponta.</p>
               </div>
             </div>
           </div>
