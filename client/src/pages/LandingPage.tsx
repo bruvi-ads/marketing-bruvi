@@ -7,7 +7,7 @@ import {
   RefreshCw,
   ChevronDown, Star
 } from "lucide-react";
-import logo from "@assets/file_00000000c8cc720e9f37c888c24f18d0_1780687139614.png";
+import logo from "@assets/1000013259-removebg-preview_1780689594276.png";
 import { Button } from "@/components/ui/button";
 import { FeatureCard } from "@/components/FeatureCard";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -292,7 +292,7 @@ export default function LandingPage() {
         >
           <div className="container mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
             <motion.div whileHover={{ scale: 1.05 }} className="flex items-center gap-2">
-              <img src={logo} alt="Bruvi Ads" className="h-12 md:h-14 w-auto object-contain" />
+              <img src={logo} alt="Bruvi Ads" className="h-16 md:h-20 w-auto object-contain" />
             </motion.div>
             <motion.div ref={waMagnet.ref} style={{ x: waMagnet.x, y: waMagnet.y }}>
               <Button
