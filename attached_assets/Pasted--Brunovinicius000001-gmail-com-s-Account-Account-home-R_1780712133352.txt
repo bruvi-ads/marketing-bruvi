@@ -1,0 +1,293 @@
+
+Brunovinicius000001@gmail.com's Account
+Account home
+
+Recents
+marketing-bruvi
+Workers
+
+Workers & Pages
+Compute
+
+Overview
+Domains
+
+bruvimarketing.site
+Domains
+
+Notifications
+Manage account
+
+
+Domains
+Observe
+
+Investigate
+
+Analytics
+Build
+
+Compute
+Workers & Pages
+Observability
+Workers for Platforms
+Containers
+Durable Objects
+Queues
+Workflows
+Browser Run
+VPC
+Beta
+
+Email Service
+Workers plans
+Flagship
+Beta
+
+AI
+
+Storage & databases
+
+Media
+Protect & Connect
+
+Application security
+Zero Trust
+
+Networking
+
+Delivery & performance
+
+Manage account
+Workers & Pages
+marketing-bruvi
+Overview
+Metrics
+Deployments
+Bindings
+Observability
+Domains
+Settings
+Back to builds
+Build #7adb27c5
+38s
+
+main
+Manually deployed
+
+bruvi-ads/marketing-bruvi
+1m ago
+
+
+Build settings
+
+Build command
+npm run build
+Deploy command
+npx wrangler deploy
+Root directory
+/
+Build token
+marketing-bruvi build token
+
+Build variables
+None
+
+Initializing
+
+
+3s
+
+23:12:53.828
+
+Cloning
+
+
+2s
+
+23:12:57.224
+
+Installing
+
+
+12s
+
+23:12:58.987
+
+Building
+
+
+8s
+
+23:13:11.170
+
+Deploying
+
+
+13s
+
+23:13:19.070
+
+23:12:59.112
+Detected the following tools from environment: npm@10.9.2, nodejs@22.16.0
+23:12:59.113
+Restoring from dependencies cache
+23:12:59.116
+Restoring from build output cache
+23:12:59.211
+Installing project dependencies: npm clean-install --progress=false
+23:13:11.063
+23:13:11.064
+added 480 packages, and audited 481 packages in 11s
+23:13:11.064
+23:13:11.064
+76 packages are looking for funding
+23:13:11.064
+  run `npm fund` for details
+23:13:11.096
+23:13:11.096
+12 vulnerabilities (5 moderate, 7 high)
+23:13:11.096
+23:13:11.096
+To address issues that do not require attention, run:
+23:13:11.097
+  npm audit fix
+23:13:11.097
+23:13:11.097
+To address all issues (including breaking changes), run:
+23:13:11.097
+  npm audit fix --force
+23:13:11.097
+23:13:11.097
+Run `npm audit` for details.
+23:13:11.324
+Executing user build command: npm run build
+23:13:11.611
+23:13:11.611
+> rest-express@1.0.0 build
+23:13:11.611
+> tsx script/build.ts
+23:13:11.611
+23:13:12.596
+building client...
+23:13:12.693
+vite v7.3.0 building client environment for production...
+23:13:13.376
+transforming...
+23:13:13.469
+Browserslist: browsers data (caniuse-lite) is 8 months old. Please run:
+23:13:13.470
+  npx update-browserslist-db@latest
+23:13:13.470
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+23:13:18.292
+✓ 2022 modules transformed.
+23:13:18.710
+rendering chunks...
+23:13:18.725
+computing gzip size...
+23:13:18.742
+../dist/public/index.html                                                       2.01 kB │ gzip:   0.77 kB
+23:13:18.743
+../dist/public/assets/1000013259-removebg-preview_1780689594276-BYYFTnx1.png  103.28 kB
+23:13:18.743
+../dist/public/assets/index-DizC-5bt.css                                       79.52 kB │ gzip:  13.20 kB
+23:13:18.743
+../dist/public/assets/index-Cr6xxIJQ.js                                       427.74 kB │ gzip: 139.35 kB
+23:13:18.743
+✓ built in 5.75s
+23:13:18.743
+building server...
+23:13:18.975
+23:13:18.975
+  dist/index.cjs  1.0mb ⚠️
+23:13:18.975
+23:13:18.976
+⚡ Done in 211ms
+23:13:19.069
+Success: Build command completed
+23:13:19.317
+Executing user deploy command: npx wrangler deploy
+23:13:20.980
+npm warn exec The following package was not found and will be installed: wrangler@4.98.0
+23:13:29.798
+23:13:29.799
+ ⛅️ wrangler 4.98.0
+23:13:29.799
+───────────────────
+23:13:29.813
+23:13:29.813
+Cloudflare collects anonymous telemetry about your usage of Wrangler. Learn more at https://github.com/cloudflare/workers-sdk/tree/main/packages/wrangler/telemetry.md
+23:13:30.044
+▲ [WARNING] It seems that you have run `wrangler deploy` on a Pages project, `wrangler pages deploy` should be used instead. Proceeding will likely produce unwanted results.
+23:13:30.045
+23:13:30.045
+23:13:30.047
+? Are you sure that you want to proceed?
+23:13:30.049
+🤖 Using fallback value in non-interactive context: yes
+23:13:30.055
+23:13:30.057
+✘ [ERROR] Missing entry-point to Worker script or to assets directory
+23:13:30.057
+23:13:30.058
+  
+23:13:30.058
+  If there is code to deploy, you can either:
+23:13:30.058
+  - Specify an entry-point to your Worker script via the command line (ex: `npx wrangler deploy src/index.ts`)
+23:13:30.058
+  - Or add the following to your "wrangler.toml" file:
+23:13:30.058
+  
+23:13:30.058
+  ```
+23:13:30.058
+  main = "src/index.ts"
+23:13:30.058
+  
+23:13:30.059
+  ```
+23:13:30.059
+  
+23:13:30.059
+  
+23:13:30.059
+  If are uploading a directory of assets, you can either:
+23:13:30.059
+  - Specify the path to the directory of assets via the command line: (ex: `npx wrangler deploy --assets=./dist`)
+23:13:30.059
+  - Or add the following to your "wrangler.toml" file:
+23:13:30.059
+  
+Support
+System status
+Careers
+Terms of Use
+Report Security Issues
+Privacy Policy
+A blue and white pill with a checkmark and an x, representing privacy choicesCookie Preferences
+© 2026 Cloudflare, Inc.
+Need more help?
+
+Good evening.
+What are we doing today?
+
+
+Deploy a Worker
+Help me get started
+
+Bind R2 to a Worker
+Connect object storage
+
+Encrypted Client Hello
+Enable ECH for my zone
+
+Transfer a domain
+Walk me through the process
+
+Domain settings
+Show my configuration
+Chats are recorded to improve the service and are processed in accordance with our Privacy Policy.
+
+What can we help you with?
