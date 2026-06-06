@@ -363,11 +363,11 @@ export default function LandingPage() {
         </motion.header>
 
         {/* ── HERO ── */}
-        <section className="relative pt-[72px] overflow-hidden hero-mesh grid-bg min-h-screen flex items-center">
+        <section className="relative pt-[72px] overflow-hidden hero-mesh grid-bg">
           <Particles />
           <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/8 to-transparent pointer-events-none" />
 
-          <div className="container mx-auto px-4 md:px-6 relative z-10 py-16 md:py-24">
+          <div className="container mx-auto px-4 md:px-6 relative z-10 py-16 md:py-20">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <div>
                 {/* Badge */}
@@ -460,12 +460,12 @@ export default function LandingPage() {
                 </motion.div>
               </div>
 
-              {/* Hero visual */}
+              {/* Hero visual — desktop only */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.85, rotateY: 15 }}
                 animate={{ opacity: 1, scale: 1, rotateY: 0 }}
                 transition={{ duration: 0.9, delay: 0.3, type: "spring" }}
-                className="relative hidden lg:block"
+                className="relative hidden xl:block"
               >
                 <TiltCard>
                   <div className="relative z-10 rounded-2xl overflow-hidden shadow-[0_30px_70px_rgba(0,0,0,0.65)] border border-white/10 card-shine">
@@ -502,16 +502,6 @@ export default function LandingPage() {
             </div>
           </div>
 
-          {/* Scroll indicator */}
-          <motion.div
-            className="absolute bottom-7 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 cursor-pointer"
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.8, repeat: Infinity, type: "tween" }}
-            onClick={() => document.getElementById("problem")?.scrollIntoView({ behavior: "smooth" })}
-          >
-            <span className="text-white/35 text-[10px] uppercase tracking-widest">scroll</span>
-            <ChevronDown className="w-5 h-5 text-white/35" />
-          </motion.div>
         </section>
 
         {/* ── STATS BAR ── */}
