@@ -773,9 +773,16 @@ export default function LandingPage() {
             </FadeIn>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {[
-                { name: "Ricardo M.", role: "Clínica Odontológica · SP", text: "Em 30 dias com a Bruvi, minha agenda estava 100% preenchida para o mês todo. Antes eu mal tinha 3 consultas por semana vindas de anúncios.", stars: 5 },
-                { name: "Patrícia L.", role: "Studio de Pilates · SP", text: "Tentei 3 agências antes. A Bruvi foi a única que mostrou relatório real desde o primeiro mês e entregou resultados de verdade. ROI de mais de 400%.", stars: 5 },
-                { name: "Marcos A.", role: "Oficina Mecânica · ABC", text: "Nunca pensei que tráfego pago funcionaria para mecânica. Hoje recebo mais de 80 pedidos de orçamento por mês só pelo Google.", stars: 5 },
+                { name: "Diego F.", role: "Barbearia Corte Nobre · Guarulhos", text: "Antes de contratar a Bruvi, minha barbearia dependia 100% do boca a boca. Em 45 dias os anúncios estavam gerando mais de 60 agendamentos novos por mês. Lotado todo final de semana.", stars: 5 },
+                { name: "Camila R.", role: "Clínica de Estética Avançada · SP", text: "Minha clínica cresceu 320% no faturamento em 90 dias. Os anúncios de harmonização facial e lipo de papada trouxeram clientes que eu nunca alcançaria pelo Instagram orgânico.", stars: 5 },
+                { name: "Thiago B.", role: "Concessionária AutoPrime · Santo André", text: "Trabalhamos com uma concessionária multimarcas e achei que tráfego pago local não funcionaria para carros. Erro meu. Geramos mais de 40 test drives qualificados no primeiro mês.", stars: 5 },
+                { name: "Juliana M.", role: "Pizzaria Dom Forno · Osasco", text: "Investimos R$450/mês em anúncios com a Bruvi e o retorno foi absurdo. Triplicamos os pedidos via WhatsApp nos fins de semana. Precisei contratar mais dois entregadores.", stars: 5 },
+                { name: "André S.", role: "Lanchonete do André · Mauá", text: "Nunca imaginei que uma lanchonete de bairro usaria tráfego pago. A Bruvi provou que estava errado. Hoje tenho fila no almoço e delivery lotado. O investimento se pagou na segunda semana.", stars: 5 },
+                { name: "Fernanda K.", role: "Clínica Odontológica Sorriso · SP", text: "Minha agenda de implantes e clareamentos estava vazia. Hoje, em plena segunda-feira de manhã, já tenho o mês cheio. A Bruvi entende de verdade o marketing para saúde.", stars: 5 },
+                { name: "Roberto N.", role: "Auto Center Top Speed · Diadema", text: "Revisão, alinhamento e balanceamento são serviços difíceis de anunciar. A Bruvi criou uma estratégia local que trouxe 90 novos clientes em 60 dias. Resultado acima do esperado.", stars: 5 },
+                { name: "Larissa V.", role: "Studio Pilates & Bem-Estar · SP", text: "Tentei impulsionar posts sozinha por meses e joguei dinheiro fora. A Bruvi estruturou um funil real, do anúncio à matrícula. ROI de 450% já no segundo mês. Recomendo demais.", stars: 5 },
+                { name: "Carlos E.", role: "Pet Shop & Banho e Tosa · SP", text: "Petshop em região com muita concorrência. A Bruvi focou nos bairros certos e nas dores dos donos de pets. Em 30 dias tínhamos fila de espera para banho e tosa. Incrível.", stars: 5 },
+                { name: "Vanessa O.", role: "Restaurante Sabor Mineiro · ABC", text: "Almoço executivo e buffet de domingo com mesas vazias viraram passado. Hoje trabalho com reserva antecipada toda semana. A Bruvi transformou meu restaurante com estratégia e consistência.", stars: 5 },
               ].map((t, i) => (
                 <FadeIn key={t.name} delay={i * 0.15}>
                   <motion.div
@@ -945,13 +952,17 @@ export default function LandingPage() {
           <div className="container mx-auto px-4 md:px-6">
             <div className="grid md:grid-cols-3 gap-10 items-start">
               <div className="flex flex-col items-center md:items-start gap-4">
-                <motion.img
-                  src={logo}
-                  alt="Bruvi Ads"
-                  className="h-14 w-auto object-contain opacity-90"
-                  whileHover={{ scale: 1.05, opacity: 1 }}
-                  data-testid="img-logo-footer"
-                />
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  className="bg-white rounded-xl px-5 py-3 shadow-lg"
+                >
+                  <img
+                    src={logo}
+                    alt="Bruvi Ads"
+                    className="h-12 w-auto object-contain"
+                    data-testid="img-logo-footer"
+                  />
+                </motion.div>
                 <p className="text-center md:text-left max-w-xs text-white/40 leading-relaxed">
                   Estratégia · Tráfego · Resultados<br />para negócios locais.
                 </p>
