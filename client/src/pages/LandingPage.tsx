@@ -6,6 +6,7 @@ import {
   ThumbsUp, Award, PhoneCall, Sparkles, Globe, Cpu, Layers,
   RefreshCw, ChevronDown, Star, Menu, X, Users, MapPin, Quote
 } from "lucide-react";
+import { SiInstagram, SiFacebook, SiBehance, SiLinkedin } from "react-icons/si";
 import logo from "@assets/1000013259-removebg-preview_1780689594276.png";
 import { Button } from "@/components/ui/button";
 import { FeatureCard } from "@/components/FeatureCard";
@@ -997,25 +998,29 @@ export default function LandingPage() {
                 </p>
               </div>
 
-              <div className="flex flex-col items-center gap-3">
-                <h4 className="text-white/80 font-bold mb-2 uppercase tracking-wider text-xs">Contato & Portfólio</h4>
+              <div className="flex flex-col items-center gap-4">
+                <h4 className="text-white/80 font-bold mb-1 uppercase tracking-wider text-xs">Contato & Redes Sociais</h4>
                 <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="hover:text-green-400 transition-colors flex items-center gap-2">
                   <MessageSquare className="w-4 h-4" /> (11) 92571-0645
                 </a>
-                <div className="flex gap-3 mt-2">
+                <div className="flex gap-3 mt-1">
                   {[
-                    { label: "LinkedIn", href: "https://www.linkedin.com/in/brunovinicius-bruvi" },
-                    { label: "Behance", href: "https://www.behance.net/brunovinicius-bruvi" },
-                  ].map(l => (
+                    { icon: SiInstagram, href: "https://www.instagram.com/bruvi.ads?igsh=MnJ6Y2d1bjhhNnA3", label: "Instagram", color: "#E1306C" },
+                    { icon: SiFacebook,  href: "https://www.facebook.com/share/14o6Fd1jwqd/",               label: "Facebook",  color: "#1877F2" },
+                    { icon: SiBehance,   href: "https://www.behance.net/bruvi-ads",                          label: "Behance",   color: "#1769FF" },
+                    { icon: SiLinkedin,  href: "https://www.linkedin.com/in/bruvi-ads/",                     label: "LinkedIn",  color: "#0A66C2" },
+                  ].map(({ icon: Icon, href, label, color }) => (
                     <motion.a
-                      key={l.label}
-                      href={l.href}
+                      key={label}
+                      href={href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      whileHover={{ scale: 1.1, color: "#EA580C" }}
-                      className="px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs hover:border-primary/40 transition-colors"
+                      aria-label={label}
+                      whileHover={{ scale: 1.18, color }}
+                      className="w-10 h-10 rounded-full bg-white/8 border border-white/12 flex items-center justify-center text-white/50 hover:border-white/30 transition-colors"
+                      data-testid={`link-social-${label.toLowerCase()}`}
                     >
-                      {l.label}
+                      <Icon className="w-5 h-5" />
                     </motion.a>
                   ))}
                 </div>
