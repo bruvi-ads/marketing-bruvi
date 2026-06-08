@@ -763,7 +763,7 @@ export default function LandingPage() {
         </section>
 
         {/* ── TESTIMONIALS ── */}
-        <section className="py-20 md:py-28 bg-gray-50 border-y border-gray-100">
+        <section className="py-20 md:py-28 bg-gray-50 border-y border-gray-100 overflow-hidden">
           <div className="container mx-auto px-4 md:px-6">
             <FadeIn>
               <div className="text-center mb-14">
@@ -771,42 +771,71 @@ export default function LandingPage() {
                 <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">Quem Já Escala com a Bruvi</h2>
               </div>
             </FadeIn>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-              {[
-                { name: "Diego F.", role: "Barbearia · Guarulhos", text: "Antes de contratar a Bruvi, minha barbearia dependia 100% do boca a boca. Em 45 dias os anúncios estavam gerando mais de 60 agendamentos novos por mês. Lotado todo final de semana.", stars: 5 },
-                { name: "Camila R.", role: "Clínica de Estética · SP", text: "Minha clínica cresceu 320% no faturamento em 90 dias. Os anúncios de harmonização facial e lipo de papada trouxeram clientes que eu nunca alcançaria pelo Instagram orgânico.", stars: 5 },
-                { name: "Thiago B.", role: "Concessionária · Santo André", text: "Trabalhamos com uma concessionária multimarcas e achei que tráfego pago local não funcionaria para carros. Erro meu. Geramos mais de 40 test drives qualificados no primeiro mês.", stars: 5 },
-                { name: "Juliana M.", role: "Pizzaria · Osasco", text: "Investimos R$450/mês em anúncios com a Bruvi e o retorno foi absurdo. Triplicamos os pedidos via WhatsApp nos fins de semana. Precisei contratar mais dois entregadores.", stars: 5 },
-                { name: "André S.", role: "Lanchonete · Mauá", text: "Nunca imaginei que uma lanchonete de bairro usaria tráfego pago. A Bruvi provou que estava errado. Hoje tenho fila no almoço e delivery lotado. O investimento se pagou na segunda semana.", stars: 5 },
-                { name: "Fernanda K.", role: "Clínica Odontológica · SP", text: "Minha agenda de implantes e clareamentos estava vazia. Hoje, em plena segunda-feira de manhã, já tenho o mês cheio. A Bruvi entende de verdade o marketing para saúde.", stars: 5 },
-                { name: "Roberto N.", role: "Auto Center · Diadema", text: "Revisão, alinhamento e balanceamento são serviços difíceis de anunciar. A Bruvi criou uma estratégia local que trouxe 90 novos clientes em 60 dias. Resultado acima do esperado.", stars: 5 },
-                { name: "Larissa V.", role: "Studio de Pilates · SP", text: "Tentei impulsionar posts sozinha por meses e joguei dinheiro fora. A Bruvi estruturou um funil real, do anúncio à matrícula. ROI de 450% já no segundo mês. Recomendo demais.", stars: 5 },
-                { name: "Carlos E.", role: "Pet Shop · SP", text: "Petshop em região com muita concorrência. A Bruvi focou nos bairros certos e nas dores dos donos de pets. Em 30 dias tínhamos fila de espera para banho e tosa. Incrível.", stars: 5 },
-                { name: "Vanessa O.", role: "Restaurante · ABC", text: "Almoço executivo e buffet de domingo com mesas vazias viraram passado. Hoje trabalho com reserva antecipada toda semana. A Bruvi transformou meu restaurante com estratégia e consistência.", stars: 5 },
-              ].map((t, i) => (
-                <FadeIn key={t.name} delay={i * 0.15}>
-                  <motion.div
-                    whileHover={{ y: -6, boxShadow: "0 20px 50px -10px rgba(0,0,0,0.1)" }}
-                    className="bg-white p-7 rounded-2xl border border-gray-100 shadow-sm transition-all card-shine"
-                  >
-                    <Quote className="w-8 h-8 text-primary/30 mb-4" />
-                    <p className="text-gray-700 leading-relaxed mb-6 italic">"{t.text}"</p>
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className="font-bold text-gray-900">{t.name}</p>
-                        <p className="text-xs text-muted-foreground mt-0.5">{t.role}</p>
-                      </div>
-                      <div className="flex gap-0.5">
-                        {Array.from({ length: t.stars }).map((_, j) => (
-                          <Star key={j} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-                        ))}
+          </div>
+
+          {(() => {
+            const testimonials = [
+              { name: "Diego F.",    role: "Barbearia · Guarulhos",          text: "Antes de contratar a Bruvi, minha barbearia dependia 100% do boca a boca. Em 45 dias os anúncios geravam mais de 60 agendamentos novos por mês. Lotado todo final de semana." },
+              { name: "Camila R.",   role: "Clínica de Estética · SP",       text: "Minha clínica cresceu 320% no faturamento em 90 dias. Os anúncios trouxeram clientes que eu nunca alcançaria pelo Instagram orgânico." },
+              { name: "Thiago B.",   role: "Concessionária · Santo André",   text: "Achei que tráfego pago local não funcionaria para carros. Erro meu. Geramos mais de 40 test drives qualificados no primeiro mês." },
+              { name: "Juliana M.", role: "Pizzaria · Osasco",               text: "Investimos R$450/mês em anúncios e o retorno foi absurdo. Triplicamos os pedidos via WhatsApp nos fins de semana. Precisei contratar mais dois entregadores." },
+              { name: "André S.",    role: "Lanchonete · Mauá",              text: "Nunca imaginei que uma lanchonete de bairro usaria tráfego pago. A Bruvi provou que estava errado. Hoje tenho fila no almoço e o delivery está lotado." },
+              { name: "Fernanda K.", role: "Clínica Odontológica · SP",      text: "Minha agenda de implantes e clareamentos estava vazia. Hoje, em plena segunda-feira de manhã, já tenho o mês cheio. A Bruvi entende marketing para saúde." },
+              { name: "Roberto N.",  role: "Auto Center · Diadema",          text: "Revisão, alinhamento e balanceamento são difíceis de anunciar. A Bruvi criou uma estratégia local que trouxe 90 novos clientes em 60 dias." },
+              { name: "Larissa V.",  role: "Studio de Pilates · SP",         text: "Tentei impulsionar posts sozinha e joguei dinheiro fora. A Bruvi estruturou um funil real, do anúncio à matrícula. ROI de 450% já no segundo mês." },
+              { name: "Carlos E.",   role: "Pet Shop · SP",                  text: "Petshop em região com muita concorrência. A Bruvi focou nos bairros certos. Em 30 dias tínhamos fila de espera para banho e tosa. Incrível." },
+              { name: "Vanessa O.",  role: "Restaurante · ABC",              text: "Mesas vazias viraram passado. Hoje trabalho com reserva antecipada toda semana. A Bruvi transformou meu restaurante com estratégia e consistência." },
+              { name: "Marcos P.",   role: "Barbearia · São Roque",          text: "São Roque é cidade pequena, mas a demanda é real. Em 3 meses triplicamos o movimento. Hoje temos fila de espera e clientes de cidades vizinhas." },
+              { name: "Ana L.",      role: "Salão de Beleza · Mairinque",    text: "Mairinque é pequena, mas os anúncios locais trouxeram clientela nova toda semana. Quadruplicamos os procedimentos de coloração e escova." },
+              { name: "João V.",     role: "Pizzaria · Sorocaba",            text: "Sorocaba tem muita concorrência em delivery. A Bruvi nos posicionou certo e hoje somos referência em pizza artesanal na região." },
+              { name: "Patrícia M.", role: "Clínica de Estética · Ibiúna",  text: "Ibiúna parecia pequena demais para tráfego pago. A Bruvi mostrou que não. Hoje atendo clientes de Sorocaba, Cotia e até SP capital." },
+              { name: "Renato S.",   role: "Oficina Mecânica · Itapevi",     text: "Em Itapevi, a Bruvi fez nossa oficina dominar o Google local. Recebemos mais de 70 pedidos de orçamento por mês. Crescimento real." },
+              { name: "Beatriz F.",  role: "Loja de Roupas · Cotia",        text: "Nossa loja física em Cotia estava parada. Com anúncios locais, aumentamos o fluxo de clientes em 180% e vendemos muito mais no WhatsApp." },
+              { name: "Eduardo C.",  role: "Academia · São Roque",           text: "Janeiro e fevereiro eram nossos meses fracos. Com a Bruvi, lotamos as turmas de musculação e ginástica mesmo na baixa temporada." },
+              { name: "Mariana T.",  role: "Confeitaria · Sorocaba",         text: "Minha confeitaria artesanal saiu do zero para 200 bolos por mês em 4 meses. Os anúncios para datas comemorativas foram certeiros." },
+              { name: "Lucas R.",    role: "Mercadinho · Mairinque",         text: "Quem diria que um mercadinho de bairro usaria tráfego pago? A Bruvi criou campanhas de delivery local e dobramos o faturamento." },
+              { name: "Sofia B.",    role: "Studio de Beleza · Ibiúna",      text: "Com anúncios da Bruvi, meu studio em Ibiúna passou a receber clientes de Caucaia do Alto e Vargem Grande. Expansão que eu nunca imaginei." },
+              { name: "Rodrigo A.",  role: "Pousada · Ibiúna",              text: "Ibiúna é destino de ecoturismo, mas eu dependia de plataformas caras. A Bruvi trouxe reservas diretas com custo menor. Faturamento 2x maior." },
+              { name: "Tatiana N.",  role: "Clínica Veterinária · Cotia",    text: "Clínica veterinária em Cotia com agenda vazia. Em 60 dias a Bruvi nos colocou no topo do Google local e a agenda encheu para o mês todo." },
+              { name: "Felipe M.",   role: "Escola de Cursos · SP",          text: "Lançamos três turmas em dois meses com a Bruvi. Todas lotaram antes do prazo. O custo por aluno captado foi 4x menor do que esperávamos." },
+              { name: "Débora L.",   role: "Farmácia · São Roque",           text: "Nossa farmácia em São Roque tinha movimento fraco à tarde. Com campanhas locais, distribuímos o fluxo ao longo do dia e aumentamos o ticket médio." },
+              { name: "Gabriel S.",  role: "Lava-Rápido · Itapevi",         text: "Em Itapevi, ser encontrado no Google era desafio. A Bruvi resolveu isso em semanas. Hoje atendo 40% mais carros por dia que antes." },
+              { name: "Isabela C.",  role: "Nutricionista · SP",             text: "Consultório cheio em 45 dias. A Bruvi entendeu meu público e criou anúncios que atraem pacientes comprometidos com saúde, não curiosos." },
+              { name: "Wellington F.", role: "Padaria · Sorocaba",           text: "Padaria artesanal em Sorocaba com pouca visibilidade. A Bruvi nos colocou no mapa. Hoje vendemos 300 pães artesanais por dia, contra 80 antes." },
+              { name: "Natália A.",  role: "Ateliê de Moda · São Roque",    text: "Meu ateliê em São Roque cresceu além da cidade. Com os anúncios, atendo noivas e madrinhas de toda a região de Sorocaba e SP." },
+              { name: "Henrique O.", role: "Fisioterapia · Cotia",           text: "Abri minha clínica de fisioterapia em Cotia e em 2 meses já estava com agenda cheia. A Bruvi acelerou meu crescimento de forma impressionante." },
+              { name: "Letícia R.",  role: "Escola de Idiomas · SP",         text: "Captamos 120 novos alunos em 90 dias com custo por lead de R$12. A Bruvi dominou o Google e o Meta para nossa escola. Resultado extraordinário." },
+            ];
+            const doubled = [...testimonials, ...testimonials];
+            return (
+              <div className="relative">
+                <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none" />
+                <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none" />
+                <div className="marquee-track gap-6 py-2">
+                  {doubled.map((t, i) => (
+                    <div
+                      key={i}
+                      className="bg-white p-7 rounded-2xl border border-gray-100 shadow-sm w-[340px] shrink-0 mx-3"
+                    >
+                      <Quote className="w-7 h-7 text-primary/30 mb-4" />
+                      <p className="text-gray-700 leading-relaxed mb-6 italic text-sm">"{t.text}"</p>
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <p className="font-bold text-gray-900 text-sm">{t.name}</p>
+                          <p className="text-xs text-muted-foreground mt-0.5">{t.role}</p>
+                        </div>
+                        <div className="flex gap-0.5">
+                          {Array.from({ length: 5 }).map((_, j) => (
+                            <Star key={j} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                          ))}
+                        </div>
                       </div>
                     </div>
-                  </motion.div>
-                </FadeIn>
-              ))}
-            </div>
-          </div>
+                  ))}
+                </div>
+              </div>
+            );
+          })()}
         </section>
 
         {/* ── OBJECTIONS / WHY US ── */}
