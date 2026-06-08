@@ -159,7 +159,7 @@ function ScrollProgress() {
 function FloatingWhatsApp() {
   const [visible, setVisible] = useState(false);
   useEffect(() => {
-    const handler = () => setVisible(window.scrollY > 300);
+    const handler = () => setVisible(window.scrollY > 120);
     window.addEventListener("scroll", handler);
     return () => window.removeEventListener("scroll", handler);
   }, []);
@@ -175,7 +175,7 @@ function FloatingWhatsApp() {
           exit={{ scale: 0, opacity: 0 }}
           whileHover={{ scale: 1.15 }}
           whileTap={{ scale: 0.95 }}
-          className="fixed bottom-6 right-6 z-50 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(34,197,94,0.5)] cursor-pointer"
+          className="fixed bottom-5 right-4 z-50 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(34,197,94,0.5)] cursor-pointer"
           aria-label="Falar no WhatsApp"
         >
           <motion.div animate={{ scale: [1, 1.2, 1] }} transition={{ duration: 2, repeat: Infinity, type: "tween" }}>
@@ -368,8 +368,8 @@ export default function LandingPage() {
           <Particles />
           <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/8 to-transparent pointer-events-none" />
 
-          <div className="container mx-auto px-4 md:px-6 relative z-10 py-16 md:py-20">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="container mx-auto px-4 md:px-6 relative z-10 py-10 md:py-20">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
               <div>
                 {/* Badge */}
                 <motion.div
@@ -390,7 +390,7 @@ export default function LandingPage() {
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.22, duration: 0.65 }}
-                  className="text-4xl sm:text-5xl md:text-6xl lg:text-[3.8rem] xl:text-7xl font-extrabold text-white leading-[1.06] mb-5 tracking-tight"
+                  className="text-[2rem] sm:text-5xl md:text-6xl lg:text-[3.8rem] xl:text-7xl font-extrabold text-white leading-[1.1] mb-4 tracking-tight"
                 >
                   Pare de Tentar.<br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-orange-400 to-orange-300 glow-text">
@@ -403,7 +403,7 @@ export default function LandingPage() {
                   initial={{ opacity: 0, y: 18 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.38 }}
-                  className="text-base md:text-lg lg:text-xl text-gray-300 mb-8 max-w-xl leading-relaxed"
+                  className="text-sm md:text-lg lg:text-xl text-gray-300 mb-6 max-w-xl leading-relaxed"
                 >
                   Transformamos negócios locais em <strong className="text-white">autoridades da região</strong>. Tráfego pago e posicionamento que colocam dinheiro no caixa — não apenas "likes".
                 </motion.p>
@@ -529,13 +529,13 @@ export default function LandingPage() {
         </section>
 
         {/* ── PROBLEM ── */}
-        <section id="problem" className="py-20 md:py-28 bg-white relative">
+        <section id="problem" className="py-12 md:py-24 bg-white relative">
           <div className="container mx-auto px-4 md:px-6">
             <FadeIn>
               <div className="max-w-3xl mx-auto text-center mb-14">
                 <span className="inline-block text-xs font-bold uppercase tracking-widest text-primary mb-3">O problema</span>
-                <h2 className="text-3xl md:text-5xl font-extrabold mb-5 text-foreground tracking-tight">A Dura Realidade do Negócio Local</h2>
-                <p className="text-lg md:text-xl text-muted-foreground">Se você depende apenas de "boca a boca", não tem um negócio — tem um hobby perigoso.</p>
+                <h2 className="text-2xl md:text-5xl font-extrabold mb-4 text-foreground tracking-tight">A Dura Realidade do Negócio Local</h2>
+                <p className="text-base md:text-xl text-muted-foreground">Se você depende apenas de "boca a boca", não tem um negócio — tem um hobby perigoso.</p>
               </div>
             </FadeIn>
 
@@ -546,7 +546,7 @@ export default function LandingPage() {
                 { icon: TrendingUp, title: "Estagnação", desc: "Sem tráfego qualificado, seu faturamento nunca ultrapassa o teto do bairro — crescimento zero.", rotate: true },
               ].map((item, i) => (
                 <FadeIn key={item.title} delay={i * 0.15}>
-                  <TiltCard className={`${i === 2 ? "sm:col-span-2 md:col-span-1" : ""}`}>
+                  <TiltCard className="h-full">
                     <div className="p-6 md:p-8 rounded-2xl bg-red-50/60 border border-red-100 h-full card-shine">
                       <div className="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center mb-5">
                         <item.icon className={`text-red-500 ${item.rotate ? "rotate-180" : ""}`} />
@@ -562,7 +562,7 @@ export default function LandingPage() {
         </section>
 
         {/* ── PROOF ── */}
-        <section className="py-16 md:py-24 bg-secondary text-white relative overflow-hidden">
+        <section className="py-12 md:py-20 bg-secondary text-white relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop')] opacity-5 bg-cover bg-center" />
           <div className="container mx-auto px-4 md:px-6 relative z-10">
             <div className="grid md:grid-cols-2 gap-10 md:gap-14 items-center">
@@ -579,7 +579,7 @@ export default function LandingPage() {
                   ].map((item, i) => (
                     <FadeIn key={item.pct} delay={i * 0.15}>
                       <div className="bg-white/5 p-5 rounded-2xl border border-white/10 backdrop-blur-sm flex items-start gap-4">
-                        <div className="text-4xl md:text-5xl font-black text-primary shrink-0">
+                        <div className="text-3xl md:text-5xl font-black text-primary shrink-0 min-w-[4rem] text-center">
                           <Counter to={item.pct} suffix="%" />
                         </div>
                         <p className="text-base text-gray-200 mt-1.5 leading-relaxed">{item.text}</p>
@@ -636,7 +636,7 @@ export default function LandingPage() {
         </section>
 
         {/* ── SERVICES ── */}
-        <section id="services" className="py-20 md:py-28 bg-gray-50/70">
+        <section id="services" className="py-12 md:py-24 bg-gray-50/70">
           <div className="container mx-auto px-4 md:px-6">
             <FadeIn>
               <div className="text-center mb-14">
@@ -669,7 +669,7 @@ export default function LandingPage() {
         </section>
 
         {/* ── ROI ── */}
-        <section id="roi" className="py-20 md:py-28 bg-white overflow-hidden">
+        <section id="roi" className="py-12 md:py-24 bg-white overflow-hidden">
           <div className="container mx-auto px-4 md:px-6">
             <div className="grid lg:grid-cols-2 gap-14 items-center">
               <FadeIn>
@@ -678,15 +678,15 @@ export default function LandingPage() {
                   Matemática, <br /><span className="text-primary">Não Mágica.</span>
                 </h2>
                 <p className="text-lg text-muted-foreground mb-10 leading-relaxed">Nossa projeção baseada em dados reais para negócios que aplicam o método com consistência:</p>
-                <div className="grid grid-cols-2 gap-6 mb-10">
-                  <div className="border-l-4 border-primary pl-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                  <div className="border-l-4 border-primary pl-5 py-2">
                     <p className="text-muted-foreground uppercase tracking-wider text-xs mb-1 font-semibold">Investimento em Ads</p>
-                    <p className="text-3xl font-black text-foreground">R$ 400–500</p>
+                    <p className="text-2xl sm:text-3xl font-black text-foreground">R$ 400–500</p>
                     <p className="text-xs text-muted-foreground mt-1">por mês nas plataformas</p>
                   </div>
-                  <div className="border-l-4 border-green-500 pl-5 bg-green-50/50 rounded-r-xl py-2 -my-2">
+                  <div className="border-l-4 border-green-500 pl-5 bg-green-50/50 rounded-r-xl py-2">
                     <p className="text-green-700 uppercase tracking-wider text-xs mb-1 font-semibold">Retorno Esperado</p>
-                    <p className="text-3xl font-black text-green-600">R$ 10.000+</p>
+                    <p className="text-2xl sm:text-3xl font-black text-green-600">R$ 10.000+</p>
                     <p className="text-xs text-green-600/70 mt-1">por mês em faturamento</p>
                   </div>
                 </div>
@@ -764,7 +764,7 @@ export default function LandingPage() {
         </section>
 
         {/* ── TESTIMONIALS ── */}
-        <section className="py-20 md:py-28 bg-gray-50 border-y border-gray-100 overflow-hidden">
+        <section className="py-12 md:py-24 bg-gray-50 border-y border-gray-100 overflow-hidden">
           <div className="container mx-auto px-4 md:px-6">
             <FadeIn>
               <div className="text-center mb-14">
@@ -816,7 +816,7 @@ export default function LandingPage() {
                   {doubled.map((t, i) => (
                     <div
                       key={i}
-                      className="bg-white p-7 rounded-2xl border border-gray-100 shadow-sm w-[340px] shrink-0 mx-3"
+                      className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm w-[290px] sm:w-[340px] shrink-0 mx-3"
                     >
                       <Quote className="w-7 h-7 text-primary/30 mb-4" />
                       <p className="text-gray-700 leading-relaxed mb-6 italic text-sm">"{t.text}"</p>
@@ -840,10 +840,10 @@ export default function LandingPage() {
         </section>
 
         {/* ── OBJECTIONS / WHY US ── */}
-        <section className="py-20 md:py-28 bg-white">
+        <section className="py-12 md:py-24 bg-white">
           <div className="container mx-auto px-4 md:px-6">
             <FadeIn>
-              <div className="text-center mb-14">
+              <div className="text-center mb-10">
                 <span className="inline-block text-xs font-bold uppercase tracking-widest text-primary mb-3">Por que a Bruvi?</span>
                 <SectionHeading
                   title="Zero Desculpas, Só Resultado"
@@ -878,7 +878,7 @@ export default function LandingPage() {
         </section>
 
         {/* ── FAQ ── */}
-        <section id="faq" className="py-20 md:py-28 bg-gray-50 border-t border-gray-100">
+        <section id="faq" className="py-12 md:py-24 bg-gray-50 border-t border-gray-100">
           <div className="container mx-auto px-4 md:px-6 max-w-4xl">
             <FadeIn>
               <div className="text-center mb-12">
@@ -911,7 +911,7 @@ export default function LandingPage() {
         </section>
 
         {/* ── FINAL CTA ── */}
-        <section id="contact" className="py-24 md:py-36 hero-mesh grid-bg relative overflow-hidden">
+        <section id="contact" className="py-14 md:py-32 hero-mesh grid-bg relative overflow-hidden">
           <Particles />
           <div className="absolute inset-0 bg-black/25 pointer-events-none" />
           <div className="absolute top-0 right-0 w-80 h-80 bg-primary/30 rounded-full blur-3xl animate-pulse pointer-events-none" />
@@ -928,11 +928,11 @@ export default function LandingPage() {
                   <PhoneCall className="text-primary w-10 h-10" />
                 </motion.div>
 
-                <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold mb-5 text-white tracking-tight">
+                <h2 className="text-2xl md:text-5xl lg:text-6xl font-extrabold mb-4 text-white tracking-tight">
                   Sua Empresa Está Pronta<br className="hidden md:block" /> Para Escalar?
                 </h2>
 
-                <p className="text-base md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto leading-relaxed">
+                <p className="text-sm md:text-xl text-gray-200 mb-8 max-w-2xl mx-auto leading-relaxed">
                   Não aceitamos qualquer cliente. Selecionamos negócios locais que têm capacidade de atendimento e querem multiplicar o faturamento nos próximos 90 dias.
                 </p>
 
