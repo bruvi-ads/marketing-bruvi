@@ -155,6 +155,108 @@ function ScrollProgress() {
   );
 }
 
+/* ── Social Proof Notification ── */
+function SocialProofNotification() {
+  const signals = [
+    { name: "Marcos P.", city: "São Roque", time: "2 min" },
+    { name: "Ana L.", city: "Mairinque", time: "5 min" },
+    { name: "João V.", city: "Sorocaba", time: "8 min" },
+    { name: "Patrícia M.", city: "Ibiúna", time: "11 min" },
+    { name: "Diego F.", city: "Guarulhos", time: "14 min" },
+    { name: "Renato S.", city: "Itapevi", time: "18 min" },
+    { name: "Beatriz F.", city: "Cotia", time: "22 min" },
+    { name: "Eduardo C.", city: "São Roque", time: "25 min" },
+  ];
+  const [idx, setIdx] = useState(0);
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    const t = setTimeout(() => setShow(true), 5000);
+    return () => clearTimeout(t);
+  }, []);
+  useEffect(() => {
+    if (!show) return;
+    const c = setInterval(() => {
+      setShow(false);
+      setTimeout(() => { setIdx(i => (i + 1) % signals.length); setShow(true); }, 600);
+    }, 7500);
+    return () => clearInterval(c);
+  }, [show]);
+  const s = signals[idx];
+  return (
+    <AnimatePresence>
+      {show && (
+        <motion.div
+          initial={{ opacity: 0, x: -80 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -80 }}
+          transition={{ type: "spring", stiffness: 250, damping: 26 }}
+          className="fixed bottom-28 left-4 z-40 flex items-center gap-3 bg-white rounded-2xl shadow-2xl border border-gray-100 px-4 py-3 max-w-[260px] pointer-events-none"
+        >
+          <div className="relative shrink-0">
+            <div className="w-9 h-9 bg-green-100 rounded-full flex items-center justify-center">
+              <Users className="w-4 h-4 text-green-600" />
+            </div>
+            <span className="absolute -top-0.5 -right-0.5 w-3 h-3 bg-green-500 rounded-full border-2 border-white" />
+          </div>
+          <div>
+            <p className="text-xs font-bold text-gray-900 leading-tight">{s.name} · {s.city}</p>
+            <p className="text-[11px] text-gray-400 mt-0.5">entrou em contato · {s.time} atrás</p>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
+
+/* ── Sticky mobile CTA bar ── */
+function StickyMobileCTA() {
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    const handler = () => setShow(window.scrollY > 280);
+    window.addEventListener("scroll", handler, { passive: true });
+    return () => window.removeEventListener("scroll", handler);
+  }, []);
+  return (
+    <AnimatePresence>
+      {show && (
+        <motion.div
+          initial={{ y: 100 }}
+          animate={{ y: 0 }}
+          exit={{ y: 100 }}
+          transition={{ type: "spring", stiffness: 300, damping: 32 }}
+          className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-white/95 backdrop-blur-md border-t border-gray-200 px-4 py-3 shadow-[0_-8px_30px_rgba(0,0,0,0.12)]"
+        >
+          <a
+            href={WA_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 w-full bg-green-500 text-white font-bold py-3.5 rounded-xl text-sm shadow-[0_0_20px_rgba(34,197,94,0.4)] active:scale-95 transition-transform"
+          >
+            <MessageSquare className="w-4 h-4" />
+            FALAR NO WHATSAPP AGORA
+          </a>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
+
+/* ── Cursor spotlight (desktop only) ── */
+function CursorSpotlight() {
+  const [pos, setPos] = useState({ x: -500, y: -500 });
+  useEffect(() => {
+    const handler = (e: MouseEvent) => setPos({ x: e.clientX, y: e.clientY });
+    window.addEventListener("mousemove", handler, { passive: true });
+    return () => window.removeEventListener("mousemove", handler);
+  }, []);
+  return (
+    <div
+      className="pointer-events-none fixed inset-0 z-[9990] hidden md:block transition-all duration-75"
+      style={{ background: `radial-gradient(400px circle at ${pos.x}px ${pos.y}px, rgba(234,88,12,0.045), transparent 80%)` }}
+    />
+  );
+}
+
 /* ── Floating WhatsApp ── */
 function FloatingWhatsApp() {
   const [visible, setVisible] = useState(false);
@@ -175,7 +277,7 @@ function FloatingWhatsApp() {
           exit={{ scale: 0, opacity: 0 }}
           whileHover={{ scale: 1.15 }}
           whileTap={{ scale: 0.95 }}
-          className="fixed bottom-5 right-4 z-50 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(34,197,94,0.5)] cursor-pointer"
+          className="fixed bottom-20 right-4 md:bottom-6 md:right-6 z-50 hidden md:flex w-16 h-16 bg-green-500 rounded-full items-center justify-center shadow-[0_0_30px_rgba(34,197,94,0.5)] cursor-pointer"
           aria-label="Falar no WhatsApp"
         >
           <motion.div animate={{ scale: [1, 1.2, 1] }} transition={{ duration: 2, repeat: Infinity, type: "tween" }}>
@@ -267,9 +369,45 @@ export default function LandingPage() {
         }
         .card-shine:hover::after { left: 130%; }
         html { scroll-behavior: smooth; }
+        @keyframes spin-border {
+          0%   { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+        .btn-spin-border {
+          position: relative;
+          isolation: isolate;
+        }
+        .btn-spin-border::before {
+          content: '';
+          position: absolute;
+          inset: -2px;
+          border-radius: 10px;
+          background: conic-gradient(from 0deg, #EA580C, #f97316, #fbbf24, #EA580C);
+          animation: spin-border 2.5s linear infinite;
+          z-index: -1;
+          opacity: 0;
+          transition: opacity 0.3s;
+        }
+        .btn-spin-border:hover::before { opacity: 1; }
+        @keyframes float-blob {
+          0%,100% { transform: translate(0,0) scale(1); }
+          33%      { transform: translate(30px,-20px) scale(1.05); }
+          66%      { transform: translate(-20px,25px) scale(0.95); }
+        }
+        .blob-1 { animation: float-blob 14s ease-in-out infinite; }
+        .blob-2 { animation: float-blob 18s ease-in-out infinite reverse; }
+        .blob-3 { animation: float-blob 22s ease-in-out infinite 3s; }
+        @keyframes step-pulse {
+          0%,100% { box-shadow: 0 0 0 0 rgba(234,88,12,0.5); }
+          50%      { box-shadow: 0 0 0 12px rgba(234,88,12,0); }
+        }
+        .step-pulse { animation: step-pulse 2.5s ease-out infinite; }
       ` }} />
 
       <ScrollProgress />
+      <CursorSpotlight />
+      <SocialProofNotification />
+      <StickyMobileCTA />
       <FloatingWhatsApp />
 
       <div className="min-h-screen bg-white font-sans overflow-x-hidden">
@@ -415,7 +553,7 @@ export default function LandingPage() {
                   transition={{ delay: 0.5 }}
                   className="flex flex-col sm:flex-row gap-3"
                 >
-                  <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.97 }}>
+                  <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.97 }} className="btn-spin-border rounded-xl w-full sm:w-auto">
                     <Button
                       size="lg"
                       className="bg-primary hover:bg-primary/90 text-white h-14 px-7 text-base font-bold shadow-[0_12px_35px_rgba(234,88,12,0.45)] w-full sm:w-auto"
@@ -632,6 +770,61 @@ export default function LandingPage() {
                 </motion.div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* ── HOW IT WORKS ── */}
+        <section className="py-12 md:py-24 bg-white">
+          <div className="container mx-auto px-4 md:px-6">
+            <FadeIn>
+              <div className="text-center mb-12">
+                <span className="inline-block text-xs font-bold uppercase tracking-widest text-primary mb-3">Processo</span>
+                <h2 className="text-2xl md:text-4xl font-extrabold tracking-tight">Do Primeiro Contato ao Primeiro Cliente</h2>
+                <p className="text-muted-foreground mt-3 max-w-xl mx-auto text-sm md:text-base">Nosso método é simples, direto e entrega os primeiros resultados em menos de 48 horas.</p>
+              </div>
+            </FadeIn>
+            <div className="relative">
+              <div className="absolute top-8 left-[12%] right-[12%] h-0.5 bg-gradient-to-r from-transparent via-primary/40 to-transparent hidden md:block" />
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+                {[
+                  { n: "01", icon: Target,     title: "Diagnóstico",        desc: "Analisamos seu negócio, mercado local e concorrência de graça." },
+                  { n: "02", icon: BarChart3,   title: "Estratégia",         desc: "Plano de ataque com metas reais e orçamento definido." },
+                  { n: "03", icon: Zap,         title: "Campanhas no Ar",    desc: "Anúncios ativos em 48h. Primeiros leads chegam logo." },
+                  { n: "04", icon: TrendingUp,  title: "Escala Contínua",    desc: "Otimizamos semana a semana para multiplicar o retorno." },
+                ].map((step, i) => (
+                  <FadeIn key={step.n} delay={i * 0.15}>
+                    <div className="flex flex-col items-center text-center">
+                      <motion.div
+                        whileInView={{ scale: [0.8, 1.1, 1] }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: i * 0.15 }}
+                        className="w-16 h-16 rounded-full bg-primary text-white font-black text-lg flex items-center justify-center mb-4 shadow-[0_8px_25px_rgba(234,88,12,0.35)] relative z-10 step-pulse"
+                      >
+                        {step.n}
+                      </motion.div>
+                      <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center mb-3">
+                        <step.icon className="w-5 h-5 text-primary" />
+                      </div>
+                      <h4 className="font-bold text-sm md:text-base mb-1.5">{step.title}</h4>
+                      <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
+                    </div>
+                  </FadeIn>
+                ))}
+              </div>
+            </div>
+            <FadeIn delay={0.4}>
+              <div className="mt-10 text-center">
+                <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }} className="inline-block btn-spin-border rounded-xl">
+                  <Button
+                    size="lg"
+                    className="bg-primary hover:bg-primary/90 text-white h-14 px-10 font-bold shadow-[0_10px_30px_rgba(234,88,12,0.3)]"
+                    onClick={() => window.open(WA_LINK, "_blank")}
+                  >
+                    QUERO COMEÇAR AGORA <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </motion.div>
+              </div>
+            </FadeIn>
           </div>
         </section>
 
